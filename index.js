@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-});
+
 
 app.get('/generate-report', async (req, res) => {
 
@@ -45,6 +45,8 @@ cron.schedule('0 9 * * 1', () => {
   generateWeeklyReport();
 
 });
+
 // Manual run
 generateWeeklyReport();
+});
 });
